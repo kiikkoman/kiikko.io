@@ -1,0 +1,115 @@
+#rparticles {
+  --blockSize: 50px;
+  --blockMargin: 5px;
+  --bg1: #df9638;
+  --bg2: #605b5f;
+  --bg3: #9fcdb2;
+  --bg4: #935153;
+  --bgText: #fff;
+  --text: #4c4c4c;
+  --textSize: 7.5px;
+  --lineHeight: 7px;
+  --font: 'Calibri';
+  --fontWeight: 900;
+  --letterSpacing: 1px;
+  --boxOuterSpacing: 4px;
+  --boxInnerSpacing: 3px;
+  --roundBorder: 0px;
+}
+
+#rparticles a {
+  display: block;
+}
+
+#rparticles img {
+  display: block;
+  object-fit: cover;
+}
+
+#rparticles > div {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#rparticles > div > div, #rparticles > div > img, #rparticles > div a[href="https://is.gd/rossr"] > img {
+  width: var(--blockSize);
+  height: var(--blockSize);
+  margin: var(--blockMargin) calc(var(--blockMargin) / 2);
+  border-radius: var(--roundBorder);
+  position: relative;
+  overflow: hidden;
+}
+
+#rparticles > div:nth-child(1) > div {
+  background: var(--bg1);
+}
+
+#rparticles > div:nth-child(2) > div {
+  background: var(--bg2);
+}
+
+#rparticles > div:nth-child(3) > div {
+  background: var(--bg3);
+}
+
+#rparticles > div:nth-child(3) > div {
+  background: var(--bg4);
+}
+
+#rparticles .rcol > div {
+  width: calc(100% - var(--boxOuterSpacing) * 2);
+  height: calc(100% - var(--boxOuterSpacing) * 2);
+  background: var(--bgText);
+  box-sizing: border-box;
+  padding: var(--boxInnerSpacing);
+  border-radius: calc(var(--roundBorder) / 2);
+  position: absolute;
+  top: var(--boxOuterSpacing);
+  left: var(--boxOuterSpacing);
+  transition: all .4s ease;
+}
+
+#rparticles div:nth-child(1) .rcol > div {
+  left: -100%;
+}
+
+#rparticles div:nth-child(1) .rcol:hover > div {
+  left: var(--boxOuterSpacing);
+}
+
+#rparticles div:nth-child(2) .rcol > div {
+  top: -100%;
+}
+
+#rparticles div:nth-child(2) .rcol:hover > div {
+  top: var(--boxOuterSpacing);
+}
+
+#rparticles div:nth-child(3) .rcol > div {
+  left: 100%;
+}
+
+#rparticles div:nth-child(3) .rcol:hover > div {
+  left: var(--boxOuterSpacing);
+}
+
+#rparticles .rcol > div .rpos {
+  position: relative;
+  top: 50%;
+  transform: translatey(-50%);
+  font: var(--fontWeight) var(--textSize)/var(--lineHeight) var(--font);
+  letter-spacing: var(--letterSpacing);
+  text-transform: uppercase;
+  text-align: justify;
+  text-align-last: justify;
+  color: var(--text);
+}
+
+#rparticles:after {
+  display: block;
+  content: "「R」";
+  font: bold 8px/12px 'Consolas';
+  color: #8e8e8e;
+  text-transform: uppercase;
+  opacity: .3;
+}
